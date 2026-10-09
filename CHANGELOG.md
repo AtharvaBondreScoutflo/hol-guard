@@ -91,6 +91,26 @@ Older releases are preserved in the [changelog archive](docs/changelog-archive.m
 * **native:** a package-intent parse now sends the caller's `PATH` to the resident. The resident is long-lived, so its own `PATH` is the one it was spawned with; a manager it cannot resolve (`npx` from a test or tool directory) made the TypeScript launch evidence incomplete and sent a contained typecheck back to review even though the caller resolved the manager fine.
 * **native:** a resident that answers a context-digest request with its own error envelope is now reported by that code — and recorded against the resilience breaker — instead of being flattened into `native_context_digest_result_invalid`. An envelope outside the contract keeps its code in the rejection reason, and a rejected result names the contract clause that rejected it with the offending keys, so a foreign frame, a stale frame and a truncated read are no longer indistinguishable.
 
+## [3.37.0](https://github.com/hashgraph-online/hol-guard/compare/v3.36.1...v3.37.0) (2026-10-09)
+
+
+### Features
+
+* **business:** classify business operations and add Drive export ([#3798](https://github.com/hashgraph-online/hol-guard/issues/3798)) ([9cc3b01](https://github.com/hashgraph-online/hol-guard/commit/9cc3b0152a4b3b62501df5121a4070d72e619c44))
+* **extensions:** add mcp-mail-server publisher listing ([#3805](https://github.com/hashgraph-online/hol-guard/issues/3805)) ([4736564](https://github.com/hashgraph-online/hol-guard/commit/4736564cf782ae5c70f2ac9275742a3c97655b1d))
+* **extensions:** require review for mcp-mail-server deletion ([#3278](https://github.com/hashgraph-online/hol-guard/issues/3278)) ([526d5b7](https://github.com/hashgraph-online/hol-guard/commit/526d5b79e67c9fc0b78411da558dfb28e4054623))
+* **guard:** detect package-runner CLIs such as npx wrangler ([#3792](https://github.com/hashgraph-online/hol-guard/issues/3792)) ([d5b645c](https://github.com/hashgraph-online/hol-guard/commit/d5b645ca58cd93550eafe699ea089887bb2922e1))
+
+
+### Bug Fixes
+
+* **runtime:** refuse multi-record business dispatch ([#3800](https://github.com/hashgraph-online/hol-guard/issues/3800)) ([77e849e](https://github.com/hashgraph-online/hol-guard/commit/77e849eef8cb5eb236f0578097ff0849e35d271c))
+
+
+### Documentation
+
+* **guard:** list business app compatibility by command and mode ([#3803](https://github.com/hashgraph-online/hol-guard/issues/3803)) ([3f37b9f](https://github.com/hashgraph-online/hol-guard/commit/3f37b9fed54da6d19ff9ed2c96c69344f7c072f0))
+
 ## [3.36.1](https://github.com/hashgraph-online/hol-guard/compare/v3.36.0...v3.36.1) (2026-10-09)
 
 
